@@ -1,5 +1,5 @@
 /* =========================================================
-   ÓRBITA — STYLE.CSS
+   ORBITA — STYLE.CSS
    Site institucional
    ========================================================= */
 
@@ -28,21 +28,8 @@
     --color-text-muted: #aaa4c2;
     --color-border: rgba(255, 255, 255, 0.08);
 
-    /* Gradientes */
-    --gradient-primary:
-        linear-gradient(
-            135deg,
-            #5423ff 0%,
-            #713cff 50%,
-            #315cff 100%
-        );
+    
 
-    --gradient-glow:
-        radial-gradient(
-            circle,
-            rgba(91, 45, 255, 0.28),
-            transparent 70%
-        );
 
     /* Dimensões */
     --container-width: 1180px;
@@ -90,11 +77,6 @@ body {
     min-height: 100vh;
 
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(56, 22, 155, 0.12),
-            transparent 35%
-        ),
         var(--color-bg);
 
     color: var(--color-text);
@@ -390,17 +372,12 @@ ol {
 
 
 /* Logo */
-
-.logo,
-.footer-logo {
-    position: relative;
-
-    color: var(--color-white);
-
-    font-size: 1.15rem;
-    font-weight: 900;
-    letter-spacing: -0.04em;
+.logo {
+    width: 40px;
+    height: auto;
 }
+
+
 
 
 .logo::after {
@@ -568,8 +545,6 @@ ol {
     top: -250px;
     left: 50%;
 
-    background:
-        var(--gradient-glow);
 
     transform: translateX(-50%);
 
@@ -695,35 +670,10 @@ ol {
 }
 
 
-/* Glow */
-
-.hero-visual::before {
-    content: "";
-
-    position: absolute;
-    inset: 18%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(64, 29, 255, 0.55),
-            rgba(26, 11, 113, 0.35) 50%,
-            transparent 72%
-        );
-
-    filter: blur(12px);
-
-    animation:
-        hero-glow 5s ease-in-out infinite;
-}
-
-
 /* Círculo central */
 
 .hero-visual::after {
-    content: "Orbita";
+    content: "";
 
     position: relative;
     z-index: 3;
@@ -737,6 +687,7 @@ ol {
     border-radius: 50%;
 
     background:
+        url("image-removebg-preview (15).png") center / 70px no-repeat,
         radial-gradient(
             circle at 35% 25%,
             #2d1a91,
@@ -758,8 +709,7 @@ ol {
         logo-float 4s ease-in-out infinite;
 }
 
-
-/* Órbita principal */
+/* Orbita principal */
 
 .hero-visual {
     --orbit-size: 330px;
@@ -988,7 +938,6 @@ ol {
             rgba(20, 14, 47, 0.7)
         );
 
-    box-shadow: var(--shadow-card);
 
     overflow: hidden;
 
@@ -1005,27 +954,7 @@ ol {
 .solution-card::before,
 .service-card::before,
 .differential-card::before,
-.testimonial-card::before {
-    content: "";
 
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    top: -50px;
-    right: -50px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(101, 62, 255, 0.18);
-
-    filter: blur(15px);
-
-    transition:
-        transform var(--transition-normal);
-}
 
 
 .feature-card:hover,
@@ -1645,7 +1574,6 @@ ol {
     background:
         radial-gradient(
             circle at 50% 50%,
-            rgba(72, 37, 255, 0.2),
             transparent 45%
         ),
         #090321;
