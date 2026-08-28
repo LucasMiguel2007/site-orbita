@@ -4,7 +4,7 @@
 <head>
 
     <!-- =====================================================
-         CONFIGURAÇÕES DO DOCUMENTO
+         CONFIGURAÇÕES BÁSICAS
          ===================================================== -->
 
     <meta charset="UTF-8">
@@ -15,20 +15,97 @@
     >
 
     <meta
+        http-equiv="content-language"
+        content="pt-BR"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+
+    <!-- =====================================================
+         SEO PRINCIPAL
+         ===================================================== -->
+
+    <title>
+        Órbita | Criação de Sites Profissionais para Empresas
+    </title>
+
+    <meta
         name="description"
-        content="Orbita | Sites profissionais que colocam sua empresa em orbita."
+        content="A Órbita cria sites profissionais, responsivos e estratégicos para empresas que querem fortalecer sua presença digital, gerar oportunidades e crescer no Google."
     >
 
     <meta
         name="author"
-        content="Lucas Miguel | Orbita"
+        content="Lucas Miguel | Órbita"
     >
 
-    <title>Orbita | Sites que colocam sua empresa em órbita</title>
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    >
+
+    <meta
+        name="googlebot"
+        content="index, follow"
+    >
 
 
     <!-- =====================================================
-         CSS EXTERNO
+         OPEN GRAPH
+         ===================================================== -->
+
+    <meta
+        property="og:locale"
+        content="pt_BR"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Órbita | Criação de Sites Profissionais para Empresas"
+    >
+
+    <meta
+        property="og:description"
+        content="Sites profissionais, responsivos e estratégicos para empresas que querem fortalecer sua presença digital e gerar novas oportunidades."
+    >
+
+    <meta
+        property="og:site_name"
+        content="Órbita"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X
+         ===================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Órbita | Criação de Sites Profissionais para Empresas"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Sites profissionais, responsivos e estratégicos para empresas."
+    >
+
+
+    <!-- =====================================================
+         CSS
          ===================================================== -->
 
     <link
@@ -36,9 +113,40 @@
         href="style.css"
     >
 
-    <link rel="icon" type="image/png" href="logo orbita.png">
-</head>
 
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="logo orbita.png"
+    >
+
+
+    <!-- =====================================================
+         DADOS ESTRUTURADOS — ORGANIZAÇÃO
+         ===================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Órbita",
+        "alternateName": "Orbita",
+        "description": "Empresa de desenvolvimento de sites profissionais, responsivos e estratégicos para empresas.",
+        "founder": {
+            "@type": "Person",
+            "name": "Lucas Miguel"
+        },
+        "sameAs": [
+            "https://www.instagram.com/orbitacoding/"
+        ]
+    }
+    </script>
+
+</head>
 
 <body>
 
@@ -57,7 +165,10 @@
                 class="logo"
                 aria-label="Orbita - Página inicial"
             >
-                <img src="image-removebg-preview (15).png" alt="Imagem da Logo da Orbita">
+                    <img
+        src="image-removebg-preview (15).png"
+        alt="Orbita — criação de sites profissionais"
+    >
             </a>
 
 
@@ -132,13 +243,13 @@
                 <div class="hero-content">
 
                     <h1 class="hero-title">
-                        Sites profissionais que colocam sua empresa em órbita.
+                        Criação de sites profissionais para empresas que querem crescer no digital.
                     </h1>
 
                     <p class="hero-description">
-                        Criamos sites modernos, estratégicos e responsivos
-                        para empresas que querem fortalecer sua presença
-                        digital e conquistar novas oportunidades.
+                        A Orbita desenvolve sites profissionais, responsivos e estratégicos
+                        para empresas que querem fortalecer sua presença digital, transmitir
+                        credibilidade, conquistar novos clientes e ampliar suas oportunidades.
                     </p>
 
 
