@@ -1,415 +1,379 @@
-/* =====================================================
-   ORBITA
-   IDENTIDADE VISUAL
-===================================================== */
+/* =========================================================
+   ORBITA — SISTEMA VISUAL
+   Responsivo: Desktop / Tablet / Mobile
+========================================================= */
 
 :root {
-
     --blue-dark: #020b1d;
-
     --blue: #041329;
-
     --blue-light: #08213e;
 
     --green: #37e889;
-
     --green-dark: #13cfa0;
 
     --white: #f7fafc;
-
     --gray: #9eafc2;
-
     --gray-dark: #657585;
 
-    --border: rgba(255,255,255,.10);
+    --border: rgba(255, 255, 255, 0.10);
+    --border-light: #dce5e5;
 
     --container: 1180px;
 
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+
+    --transition: 0.3s ease;
 }
 
 
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
-* {
-
+*,
+*::before,
+*::after {
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
+    scroll-padding-top: 90px;
 }
-
 
 body {
-
+    min-width: 320px;
     font-family: "Inter", Arial, sans-serif;
-
     background: var(--blue-dark);
-
     color: var(--white);
-
     line-height: 1.6;
-
     overflow-x: hidden;
-
 }
-
 
 body::selection {
-
     background: var(--green);
-
     color: var(--blue-dark);
-
 }
-
 
 img {
-
     max-width: 100%;
-
+    height: auto;
     display: block;
-
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
 button {
-
     font-family: inherit;
+}
 
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+p {
+    color: var(--gray);
+    text-wrap: pretty;
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTAINER
-===================================================== */
+========================================================= */
 
 .container {
-
     width: min(
         calc(100% - 40px),
         var(--container)
     );
 
-    margin: auto;
-
+    margin-inline: auto;
 }
 
 
-/* =====================================================
+/* =========================================================
    ACESSIBILIDADE
-===================================================== */
+========================================================= */
 
 .skip-link {
-
     position: fixed;
-
-    left: 20px;
-
     top: -100px;
-
+    left: 20px;
     z-index: 9999;
 
     padding: 12px 18px;
 
     background: var(--green);
-
     color: var(--blue-dark);
 
     font-weight: 800;
-
     border-radius: 8px;
 
+    transition: top 0.2s ease;
 }
-
 
 .skip-link:focus {
-
     top: 20px;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 .header {
-
     position: absolute;
-
-    top: 0;
-
-    left: 0;
+    inset: 0 0 auto;
 
     width: 100%;
-
-    z-index: 100;
+    z-index: 1000;
 
     padding: 20px 0;
-
 }
-
 
 .nav-container {
-
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
-
+    position: relative;
 }
 
 
+/* LOGO */
+
 .logo {
-
-    display: flex;
-
+    display: inline-flex;
     align-items: center;
 
     gap: 10px;
 
     font-size: 20px;
-
     font-weight: 800;
 
-    letter-spacing: .16em;
+    letter-spacing: 0.16em;
 
+    flex-shrink: 0;
 }
 
-
 .logo img {
-
     width: 52px;
-
     height: 52px;
 
     object-fit: contain;
-
 }
-
 
 .logo span span {
-
     color: var(--green);
-
 }
 
 
+/* NAV */
+
 .nav {
-
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 
     font-size: 13px;
-
     color: #b8c6d5;
-
 }
-
 
 .nav a {
-
-    transition: .25s;
-
+    position: relative;
+    transition: color var(--transition);
 }
 
+.nav a:not(.nav-button)::after {
+    content: "";
 
-.nav a:hover {
+    position: absolute;
+    left: 0;
+    bottom: -7px;
 
+    width: 0;
+    height: 1px;
+
+    background: var(--green);
+
+    transition: width var(--transition);
+}
+
+.nav a:not(.nav-button):hover {
     color: var(--green);
-
 }
 
+.nav a:not(.nav-button):hover::after {
+    width: 100%;
+}
+
+
+/* BOTÃO NAV */
 
 .nav-button {
-
     padding: 11px 18px;
 
+    border: 1px solid rgba(55, 232, 137, 0.3);
     border-radius: 100px;
 
-    border: 1px solid rgba(55,232,137,.3);
-
-    background: rgba(55,232,137,.05);
+    background: rgba(55, 232, 137, 0.05);
 
     color: var(--white) !important;
 
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(55, 232, 137, 0.12);
+    border-color: rgba(55, 232, 137, 0.6);
 }
 
 
-.menu-button {
+/* MENU MOBILE */
 
+.menu-button {
     display: none;
 
-    width: 44px;
+    width: 46px;
+    height: 46px;
 
-    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
 
-    border: none;
-
-    background: transparent;
+    background: rgba(255, 255, 255, 0.04);
 
     cursor: pointer;
 
+    padding: 0;
 }
 
-
 .menu-button span {
-
     display: block;
 
-    width: 24px;
-
+    width: 23px;
     height: 2px;
 
     margin: 5px auto;
 
     background: white;
+    border-radius: 10px;
 
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-button.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 
-/* =====================================================
+/* =========================================================
    TIPOGRAFIA
-===================================================== */
-
-h1,
-h2,
-h3 {
-
-    line-height: 1.08;
-
-}
-
+========================================================= */
 
 h1 {
-
-    font-size: clamp(
-        44px,
-        6vw,
-        78px
-    );
-
-    letter-spacing: -.055em;
-
+    font-size: clamp(46px, 6vw, 78px);
+    letter-spacing: -0.055em;
 }
-
 
 h2 {
-
-    font-size: clamp(
-        36px,
-        4.5vw,
-        62px
-    );
-
-    letter-spacing: -.045em;
-
+    font-size: clamp(38px, 4.5vw, 62px);
+    letter-spacing: -0.045em;
 }
-
 
 h1 strong,
 h2 strong {
-
     color: var(--green);
-
 }
-
-
-p {
-
-    color: var(--gray);
-
-}
-
 
 .eyebrow {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 10px;
 
     color: var(--green);
 
     font-size: 11px;
-
     font-weight: 800;
 
-    letter-spacing: .22em;
-
+    letter-spacing: 0.22em;
 }
 
-
 .eyebrow i {
-
     width: 8px;
-
     height: 8px;
 
     border-radius: 50%;
 
     background: var(--green);
 
-    box-shadow:
-        0 0 20px var(--green);
-
+    box-shadow: 0 0 20px var(--green);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
+    position: relative;
 
     min-height: 850px;
 
     display: flex;
-
     align-items: center;
-
-    position: relative;
 
     overflow: hidden;
 
-    padding-top: 130px;
+    padding:
+        140px 0
+        90px;
 
     background:
-
         radial-gradient(
             circle at 75% 45%,
-            rgba(16,123,95,.18),
+            rgba(16, 123, 95, 0.18),
             transparent 28%
         ),
 
         radial-gradient(
             circle at 20% 0%,
-            rgba(12,50,90,.40),
+            rgba(12, 50, 90, 0.40),
             transparent 35%
         ),
 
@@ -419,25 +383,22 @@ p {
             #031329,
             #020b1d
         );
-
 }
 
 
-.hero::before {
+/* GRID */
 
+.hero::before {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background-image:
-
         linear-gradient(
             rgba(255,255,255,.025) 1px,
             transparent 1px
         ),
-
         linear-gradient(
             90deg,
             rgba(255,255,255,.025) 1px,
@@ -453,44 +414,117 @@ p {
             transparent
         );
 
+    pointer-events: none;
 }
 
 
+/* FUNDO ANIMADO */
+
+.hero-background {
+    position: absolute;
+    inset: -20%;
+
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(55,232,137,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 75% 60%,
+            rgba(19,207,160,.08),
+            transparent 25%
+        );
+
+    animation:
+        backgroundMove 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes backgroundMove {
+    from {
+        transform:
+            translate3d(-2%, -2%, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate3d(2%, 2%, 0)
+            scale(1.08);
+    }
+}
+
+
+/* HERO GRID */
+
 .hero-container {
-
     position: relative;
-
     z-index: 2;
 
     display: grid;
 
     grid-template-columns:
-        1.08fr
-        .92fr;
+        minmax(0, 1.08fr)
+        minmax(400px, .92fr);
 
     align-items: center;
 
-    gap: 50px;
-
+    gap: clamp(40px, 6vw, 80px);
 }
 
 
-.hero-content p {
+/* HERO TEXTO */
 
+.hero-content {
+    min-width: 0;
+}
+
+.hero-content h1 {
+    max-width: 850px;
+
+    animation:
+        heroTextIn 1s
+        cubic-bezier(.2,.8,.2,1)
+        both;
+}
+
+.hero-content > p {
     max-width: 690px;
 
     margin-top: 25px;
 
     font-size: 17px;
-
     line-height: 1.8;
 
+    animation:
+        heroTextIn 1s .15s
+        cubic-bezier(.2,.8,.2,1)
+        both;
+}
+
+@keyframes heroTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-.hero-buttons {
+/* BOTÕES */
 
+.hero-buttons {
     display: flex;
+    align-items: center;
 
     gap: 12px;
 
@@ -498,17 +532,17 @@ p {
 
     margin-top: 34px;
 
+    animation:
+        heroTextIn 1s .3s
+        cubic-bezier(.2,.8,.2,1)
+        both;
 }
 
-
 .button {
-
     min-height: 52px;
 
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 14px;
@@ -518,22 +552,21 @@ p {
     border-radius: 100px;
 
     font-size: 13px;
-
     font-weight: 800;
 
-    transition: .25s;
-
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
-
 
 .button:hover {
-
     transform: translateY(-3px);
-
 }
 
-
 .button-primary {
+    position: relative;
+
+    overflow: hidden;
 
     color: #02111f;
 
@@ -547,79 +580,96 @@ p {
     box-shadow:
         0 15px 45px
         rgba(32,219,142,.20);
-
 }
 
+.button-primary::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left .6s ease;
+}
+
+.button-primary:hover::before {
+    left: 140%;
+}
 
 .button-secondary {
-
     border: 1px solid var(--border);
 
-    background: rgba(255,255,255,.025);
+    background:
+        rgba(255,255,255,.025);
 
     color: #d6e0e9;
+}
 
+.button-secondary:hover {
+    border-color:
+        rgba(55,232,137,.3);
+
+    background:
+        rgba(55,232,137,.05);
 }
 
 
-.trust {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-top: 28px;
-
-    color: #71849b;
-
-    font-size: 12px;
-
-}
-
-
-.pulse {
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow:
-        0 0 0 6px rgba(55,232,137,.08),
-        0 0 16px var(--green);
-
-}
-
-
-/* =====================================================
-   ORBIT VISUAL
-===================================================== */
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
 .hero-visual {
+    position: relative;
 
     min-height: 510px;
 
-    position: relative;
-
     display: grid;
-
     place-items: center;
 
+    animation:
+        visualIn 1.2s .2s
+        cubic-bezier(.2,.8,.2,1)
+        both;
+}
+
+@keyframes visualIn {
+    from {
+        opacity: 0;
+        transform:
+            scale(.85)
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
 }
 
 
+/* ORBIT */
+
 .orbit {
-
-    width: 440px;
-
-    height: 440px;
-
     position: relative;
+
+    width: min(440px, 90vw);
+    aspect-ratio: 1;
 
     border-radius: 50%;
 
@@ -630,48 +680,38 @@ p {
             rgba(3,15,33,.1) 62%,
             transparent 63%
         );
-
 }
 
-
 .orbit-circle {
-
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
-    width: 315px;
-
-    height: 315px;
+    width: 71.5%;
+    aspect-ratio: 1;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 
     border:
         1px solid
         rgba(255,255,255,.22);
 
     border-radius: 50%;
-
 }
 
-
 .orbit-ring {
-
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
-    width: 380px;
-
-    height: 155px;
+    width: 86%;
+    height: 35%;
 
     transform:
-        translate(-50%,-50%)
+        translate(-50%, -50%)
         rotate(-26deg);
 
     border: 10px solid transparent;
@@ -688,26 +728,40 @@ p {
         0 0 30px
         rgba(55,232,137,.12);
 
+    animation:
+        orbitRotate 12s linear infinite;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(-26deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(334deg);
+    }
 }
 
 
-.orbit-center {
+/* CENTRO */
 
+.orbit-center {
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     width: 100px;
-
-    height: 100px;
+    aspect-ratio: 1;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 
     display: grid;
-
     place-items: center;
 
     border-radius: 50%;
@@ -727,16 +781,41 @@ p {
         0 0 70px
         rgba(55,232,137,.22);
 
+    animation:
+        centerPulse 3s ease-in-out infinite;
+}
+
+@keyframes centerPulse {
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        box-shadow:
+            0 0 50px
+            rgba(55,232,137,.18);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+
+        box-shadow:
+            0 0 90px
+            rgba(55,232,137,.35);
+    }
 }
 
 
-.orbit-dot {
+/* PONTOS */
 
+.orbit-dot {
     position: absolute;
 
     width: 13px;
-
-    height: 13px;
+    aspect-ratio: 1;
 
     border-radius: 50%;
 
@@ -745,35 +824,45 @@ p {
     box-shadow:
         0 0 25px
         var(--green);
-
 }
-
 
 .dot-one {
+    top: 12%;
+    right: 22%;
 
-    top: 52px;
-
-    right: 96px;
-
+    animation:
+        satelliteFloat 4s ease-in-out infinite;
 }
-
 
 .dot-two {
+    bottom: 18%;
+    left: 15%;
 
-    bottom: 78px;
+    animation:
+        satelliteFloat 5s ease-in-out infinite reverse;
+}
 
-    left: 65px;
+@keyframes satelliteFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .7;
+    }
 
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
 }
 
 
-.orbit-arrow {
+/* SETA */
 
+.orbit-arrow {
     position: absolute;
 
-    top: 44px;
-
-    right: 40px;
+    top: 10%;
+    right: 9%;
 
     color: var(--green);
 
@@ -781,16 +870,36 @@ p {
 
     transform: rotate(-10deg);
 
+    animation:
+        arrowFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+    0%,
+    100% {
+        transform:
+            rotate(-10deg)
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            rotate(-10deg)
+            translate(7px,-7px);
+    }
 }
 
 
-/* =====================================================
+/* =========================================================
    CARDS DO HERO
-===================================================== */
+========================================================= */
 
 .info-card {
-
     position: absolute;
+
+    z-index: 3;
+
+    max-width: 210px;
 
     padding: 18px 20px;
 
@@ -808,13 +917,10 @@ p {
     box-shadow:
         0 30px 80px
         rgba(0,0,0,.35);
-
 }
-
 
 .info-card span,
 .info-card small {
-
     display: block;
 
     color: #71849b;
@@ -824,61 +930,58 @@ p {
     letter-spacing: .18em;
 
     font-weight: 800;
-
 }
 
-
 .info-card strong {
-
     display: block;
 
     margin: 5px 0;
 
     font-size: 20px;
-
 }
-
 
 .card-one {
+    top: 4%;
+    left: 0;
 
-    top: 20px;
-
-    left: 10px;
-
+    animation:
+        floatingCard 5s ease-in-out infinite;
 }
-
 
 .card-two {
-
     right: 0;
+    bottom: 4%;
 
-    bottom: 10px;
-
+    animation:
+        floatingCard 6s ease-in-out infinite reverse;
 }
-
 
 .card-two strong {
-
     color: var(--green);
-
     font-size: 15px;
+}
 
+@keyframes floatingCard {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 
-/* =====================================================
-   SECTIONS
-===================================================== */
+/* =========================================================
+   SEÇÕES
+========================================================= */
 
 .section {
-
     padding: 110px 0;
-
 }
 
-
 .dark-section {
-
     background:
         radial-gradient(
             circle at 10% 30%,
@@ -891,65 +994,50 @@ p {
             #031027,
             #020b1d
         );
-
 }
 
 
-/* =====================================================
+/* =========================================================
    PROBLEM
-===================================================== */
+========================================================= */
 
 .section-intro {
-
     max-width: 900px;
-
 }
-
 
 .section-intro h2 {
-
     margin-top: 22px;
-
 }
-
 
 .section-intro h2 em {
-
     color: var(--green);
-
     font-style: normal;
-
 }
-
 
 .section-intro p {
-
     max-width: 740px;
-
     margin-top: 24px;
-
 }
 
-
 .problem-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 16px;
 
     margin-top: 65px;
-
 }
 
-
 .problem-card {
+    position: relative;
 
     min-height: 250px;
 
     padding: 30px;
+
+    overflow: hidden;
 
     border:
         1px solid
@@ -964,23 +1052,54 @@ p {
             rgba(255,255,255,.015)
         );
 
-    transition: .3s;
-
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
-
 .problem-card:hover {
-
     transform: translateY(-6px);
 
     border-color:
         rgba(55,232,137,.28);
 
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.18);
 }
 
+.problem-card::before,
+.service::before,
+.differential-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -80px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    opacity: 0;
+
+    filter: blur(70px);
+
+    transition: opacity .4s ease;
+}
+
+.problem-card:hover::before,
+.service:hover::before,
+.differential-card:hover::before {
+    opacity: .18;
+}
 
 .problem-card > span {
-
     color: var(--green);
 
     font-size: 11px;
@@ -988,149 +1107,114 @@ p {
     font-weight: 800;
 
     letter-spacing: .16em;
-
 }
 
-
 .problem-card h3 {
-
     margin-top: 70px;
 
     font-size: 23px;
-
 }
 
-
 .problem-card p {
-
     margin-top: 12px;
 
     font-size: 14px;
-
 }
 
 
-/* =====================================================
-   SOLUTION
-===================================================== */
+/* =========================================================
+   SOLUÇÃO
+========================================================= */
 
 .solution {
-
     background: #f5f8f8;
-
     color: var(--blue-dark);
-
 }
-
 
 .solution p {
-
     color: var(--gray-dark);
-
 }
 
-
 .section-header {
-
     display: grid;
 
     grid-template-columns:
-        1.05fr
-        .75fr;
+        minmax(0, 1.05fr)
+        minmax(280px, .75fr);
 
     align-items: end;
 
     gap: 80px;
-
 }
-
 
 .section-header h2 {
-
     margin-top: 18px;
-
 }
 
-
 .section-header > p {
-
     padding-bottom: 5px;
 
     font-size: 15px;
-
 }
 
-
 .services {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 16px;
 
     margin-top: 65px;
-
 }
 
-
 .service {
+    position: relative;
 
     min-height: 420px;
 
     padding: 32px;
 
+    overflow: hidden;
+
     border:
         1px solid
-        #dce5e5;
+        var(--border-light);
 
     border-radius: 22px;
 
     background: white;
 
-    transition: .3s;
-
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
-
 .service:hover {
-
     transform: translateY(-7px);
 
     box-shadow:
         0 25px 60px
         rgba(3,19,41,.10);
-
 }
 
-
 .service.featured {
-
     color: white;
 
     background: #06213b;
 
     border-color: #0c3653;
-
 }
-
 
 .service.featured p {
-
     color: #9eb4c5;
-
 }
 
-
 .service-icon {
-
     width: 48px;
-
     height: 48px;
 
     display: grid;
-
     place-items: center;
 
     border:
@@ -1146,11 +1230,22 @@ p {
     background:
         rgba(55,232,137,.06);
 
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
+.service:hover .service-icon {
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+    box-shadow:
+        0 0 30px
+        rgba(55,232,137,.15);
+}
 
 .service .number {
-
     display: block;
 
     margin-top: 55px;
@@ -1162,30 +1257,21 @@ p {
     font-weight: 800;
 
     letter-spacing: .18em;
-
 }
 
-
 .service h3 {
-
     margin-top: 9px;
 
     font-size: 25px;
-
 }
 
-
 .service p {
-
     margin-top: 14px;
 
     font-size: 14px;
-
 }
 
-
 .service ul {
-
     list-style: none;
 
     margin-top: 25px;
@@ -1193,28 +1279,19 @@ p {
     display: grid;
 
     gap: 10px;
-
 }
 
-
 .service li {
-
     color: #637485;
 
     font-size: 12px;
-
 }
-
 
 .service.featured li {
-
     color: #bdcbd5;
-
 }
 
-
 .service li::before {
-
     content: "✓";
 
     margin-right: 9px;
@@ -1222,22 +1299,19 @@ p {
     color: var(--green);
 
     font-weight: 800;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    PROCESSO
-===================================================== */
+========================================================= */
 
 .process .section-header h2 {
-
     color: white;
-
 }
 
-
 .process-list {
+    position: relative;
 
     list-style: none;
 
@@ -1246,18 +1320,36 @@ p {
     border-top:
         1px solid
         var(--border);
-
 }
 
+.process-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--green),
+            transparent
+        );
+
+    opacity: .25;
+}
 
 .process-item {
-
     display: grid;
 
     grid-template-columns:
         100px
-        1fr
-        30px;
+        minmax(0, 1fr);
 
     align-items: center;
 
@@ -1269,22 +1361,20 @@ p {
         1px solid
         var(--border);
 
-    transition: .25s;
-
+    transition:
+        padding var(--transition),
+        background var(--transition);
 }
-
 
 .process-item:hover {
-
     padding-left: 15px;
-
     padding-right: 15px;
 
+    background:
+        rgba(55,232,137,.015);
 }
 
-
 .process-item > span {
-
     color: var(--green);
 
     font-size: 12px;
@@ -1293,91 +1383,64 @@ p {
 
     letter-spacing: .15em;
 
+    transition:
+        transform var(--transition);
 }
 
+.process-item:hover > span {
+    transform: translateX(8px);
+}
 
 .process-item h3 {
-
     font-size: 24px;
-
 }
 
-
 .process-item p {
-
     margin-top: 7px;
 
     font-size: 14px;
-
 }
 
 
-.process-item > strong {
-
-    color: var(--green);
-
-    font-size: 24px;
-
-}
-
-
-/* =====================================================
+/* =========================================================
    DIFERENCIAIS
-===================================================== */
+========================================================= */
 
 .differentials {
-
     background: #f5f8f8;
-
     color: var(--blue-dark);
-
 }
 
-
 .differential-container {
-
     display: grid;
 
     grid-template-columns:
-        .72fr
-        1.28fr;
+        minmax(280px, .72fr)
+        minmax(0, 1.28fr);
 
     gap: 100px;
 
     align-items: start;
-
 }
-
 
 .differential-text h2 {
-
     margin-top: 20px;
-
 }
-
 
 .differential-text h2 span {
-
     color: var(--green-dark);
-
 }
 
-
 .differential-text > p {
-
     max-width: 500px;
 
     margin-top: 22px;
 
     color: var(--gray-dark);
-
 }
 
-
 .text-link {
-
     display: inline-flex;
-
     align-items: center;
 
     gap: 12px;
@@ -1387,83 +1450,88 @@ p {
     color: #031a2c;
 
     font-size: 13px;
-
     font-weight: 800;
 
+    transition:
+        color var(--transition),
+        transform var(--transition);
 }
 
-
 .text-link span {
-
     color: var(--green-dark);
 
     font-size: 20px;
-
 }
 
+.text-link:hover {
+    color: var(--green-dark);
+
+    transform: translateX(4px);
+}
 
 .differential-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(2, minmax(0, 1fr));
 
     gap: 16px;
-
 }
 
-
 .differential-card {
+    position: relative;
 
     min-height: 210px;
 
     padding: 30px;
 
+    overflow: hidden;
+
     border:
         1px solid
-        #dce5e5;
+        var(--border-light);
 
     border-radius: 22px;
 
     background: white;
 
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
+.differential-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(3,19,41,.10);
+}
 
 .differential-card > span {
-
     color: var(--green-dark);
 
     font-size: 22px;
-
 }
 
-
 .differential-card h3 {
-
     margin-top: 30px;
 
     font-size: 20px;
-
 }
 
-
 .differential-card p {
-
     margin-top: 9px;
 
     font-size: 13px;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    CTA
-===================================================== */
+========================================================= */
 
 .cta {
-
     background:
         radial-gradient(
             circle at 50% 0%,
@@ -1472,15 +1540,17 @@ p {
         ),
 
         #020b1d;
-
 }
 
-
 .cta-box {
+    position: relative;
 
     text-align: center;
 
-    padding: 80px 30px;
+    padding:
+        80px 30px;
+
+    overflow: hidden;
 
     border:
         1px solid
@@ -1495,29 +1565,39 @@ p {
             rgba(3,16,34,.95)
         );
 
+    animation:
+        ctaGlow 5s ease-in-out infinite alternate;
 }
 
+@keyframes ctaGlow {
+    from {
+        box-shadow:
+            0 0 0
+            rgba(55,232,137,0);
+    }
+
+    to {
+        box-shadow:
+            0 0 70px
+            rgba(55,232,137,.08);
+    }
+}
 
 .cta-box h2 {
-
     max-width: 800px;
 
-    margin: 20px auto 0;
-
+    margin: 0 auto;
 }
-
 
 .cta-box > p {
-
     max-width: 620px;
 
-    margin: 20px auto 28px;
-
+    margin:
+        20px auto
+        28px;
 }
 
-
 .cta-box small {
-
     display: block;
 
     margin-top: 14px;
@@ -1525,16 +1605,14 @@ p {
     color: #71849b;
 
     font-size: 11px;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 .footer {
-
     padding: 35px 0;
 
     background: #010817;
@@ -1542,12 +1620,9 @@ p {
     border-top:
         1px solid
         var(--border);
-
 }
 
-
 .footer-container {
-
     display: grid;
 
     grid-template-columns:
@@ -1558,39 +1633,27 @@ p {
     align-items: center;
 
     gap: 30px;
-
 }
 
-
 .footer-logo {
-
     font-size: 18px;
 
     font-weight: 800;
 
     letter-spacing: .16em;
-
 }
-
 
 .footer-logo span {
-
     color: var(--green);
-
 }
 
-
 .footer-container p {
-
     margin-top: 5px;
 
     font-size: 11px;
-
 }
 
-
 .footer-links {
-
     display: flex;
 
     gap: 22px;
@@ -1598,213 +1661,203 @@ p {
     color: var(--gray);
 
     font-size: 11px;
-
 }
 
+.footer-links a {
+    transition: color var(--transition);
+}
 
 .footer-links a:hover {
-
     color: var(--green);
-
 }
-
 
 .copyright {
-
     color: #526579;
-
 }
 
 
-/* =====================================================
-   TABLET
-===================================================== */
+/* =========================================================
+   TABLET — 981px ATÉ 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 48px),
+                var(--container)
+            );
+    }
+
+    .hero-container {
+        gap: 35px;
+    }
+
+    .hero-visual {
+        transform: scale(.92);
+    }
+
+    .differential-container {
+        gap: 60px;
+    }
+}
+
+
+/* =========================================================
+   TABLET — ATÉ 980px
+========================================================= */
 
 @media (max-width: 980px) {
 
+    .container {
+        width:
+            min(
+                calc(100% - 40px),
+                var(--container)
+            );
+    }
+
+    /* HERO */
 
     .hero {
-
         min-height: auto;
 
         padding:
-            150px 0
+            145px 0
             80px;
-
     }
-
 
     .hero-container {
-
         grid-template-columns: 1fr;
 
+        gap: 40px;
     }
-
 
     .hero-content {
-
         text-align: center;
-
     }
 
-
-    .hero-content p {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
+    .hero-content h1 {
+        max-width: 800px;
+        margin-inline: auto;
     }
 
+    .hero-content > p {
+        margin-inline: auto;
+    }
 
     .hero-buttons {
-
         justify-content: center;
-
     }
-
-
-    .trust {
-
-        justify-content: center;
-
-    }
-
 
     .hero-visual {
-
         min-height: 470px;
 
+        transform: none;
     }
 
+    /* SEÇÕES */
 
     .section-header {
-
         grid-template-columns: 1fr;
 
-        gap: 30px;
-
+        gap: 25px;
     }
 
+    .section-header > p {
+        max-width: 700px;
+    }
+
+    /* CARDS */
 
     .problem-grid,
     .services {
-
         grid-template-columns:
-            repeat(2,1fr);
-
+            repeat(2, minmax(0, 1fr));
     }
-
 
     .problem-card:last-child {
-
         grid-column: 1 / -1;
-
     }
 
+    /* DIFERENCIAIS */
 
     .differential-container {
-
         grid-template-columns: 1fr;
 
-        gap: 50px;
-
+        gap: 55px;
     }
 
+    .differential-text > p {
+        max-width: 700px;
+    }
+
+    /* FOOTER */
 
     .footer-container {
-
         grid-template-columns:
-            1fr 1fr;
-
+            1fr
+            1fr;
     }
-
 
     .copyright {
-
         grid-column: 1 / -1;
-
     }
-
 }
 
 
-/* =====================================================
-   CELULAR
-===================================================== */
+/* =========================================================
+   MOBILE — ATÉ 720px
+========================================================= */
 
 @media (max-width: 720px) {
 
-
     .container {
-
         width:
-            min(
-                calc(100% - 28px),
-                var(--container)
-            );
-
+            calc(100% - 28px);
     }
 
-
     .section {
-
         padding: 78px 0;
-
     }
 
 
     /* HEADER */
 
     .header {
-
-        padding-top: 13px;
-
+        padding: 12px 0;
     }
-
-
-    .logo img {
-
-        width: 45px;
-
-        height: 45px;
-
-    }
-
 
     .logo {
-
         font-size: 17px;
-
     }
 
+    .logo img {
+        width: 43px;
+        height: 43px;
+    }
 
     .menu-button {
-
         display: block;
-
     }
 
-
     .nav {
-
-        display: none;
+        display: flex;
 
         position: absolute;
 
-        top: 72px;
+        top: calc(100% + 12px);
 
-        left: 14px;
-
-        right: 14px;
+        left: 0;
+        right: 0;
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 3px;
 
-        padding: 18px;
+        padding: 14px;
 
         border:
             1px solid
@@ -1815,960 +1868,418 @@ p {
         background:
             rgba(3,16,34,.97);
 
+        backdrop-filter: blur(20px);
+
         box-shadow:
             0 30px 80px
             rgba(0,0,0,.35);
 
-    }
+        opacity: 0;
+        visibility: hidden;
 
+        transform:
+            translateY(-10px);
+
+        pointer-events: none;
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+    }
 
     .nav.open {
+        opacity: 1;
+        visibility: visible;
 
-        display: flex;
+        transform:
+            translateY(0);
 
+        pointer-events: auto;
     }
-
 
     .nav a {
-
         padding: 13px 12px;
-
     }
 
+    .nav a:not(.nav-button)::after {
+        display: none;
+    }
 
     .nav-button {
-
         text-align: center;
 
         margin-top: 7px;
-
     }
 
 
     /* HERO */
 
     .hero {
-
-        padding-top: 120px;
-
+        padding:
+            115px 0
+            60px;
     }
-
 
     h1 {
-
         font-size:
             clamp(
-                39px,
-                12vw,
-                57px
+                38px,
+                11vw,
+                55px
             );
-
     }
 
+    h2 {
+        font-size:
+            clamp(
+                34px,
+                9vw,
+                44px
+            );
+    }
 
-    .hero-content p {
-
+    .hero-content > p {
         font-size: 15px;
 
+        line-height: 1.7;
     }
-
 
     .hero-buttons {
-
         flex-direction: column;
-
-    }
-
-
-    .button {
 
         width: 100%;
 
+        margin-top: 28px;
     }
 
+    .button {
+        width: 100%;
+
+        min-height: 54px;
+    }
+
+
+    /* VISUAL */
 
     .hero-visual {
+        width: 100%;
 
-        min-height: 390px;
+        min-height: 350px;
 
-        transform:
-            scale(.80);
+        margin-top: 5px;
 
-        margin:
-            -25px 0;
+        transform: none;
+    }
 
+    .orbit {
+        width:
+            min(
+                360px,
+                86vw
+            );
+    }
+
+    .orbit-center {
+        width: 82px;
+
+        font-size: 38px;
+    }
+
+    .orbit-ring {
+        border-width: 7px;
+
+        animation-duration:
+            18s;
+    }
+
+    .orbit-arrow {
+        font-size: 50px;
+    }
+
+    .orbit-dot {
+        width: 10px;
+    }
+
+    .info-card {
+        max-width: 150px;
+
+        padding:
+            13px 14px;
+
+        border-radius: 13px;
+    }
+
+    .info-card strong {
+        font-size: 16px;
+    }
+
+    .info-card span,
+    .info-card small {
+        font-size: 7px;
+    }
+
+    .card-one {
+        left: 0;
+        top: 2%;
+    }
+
+    .card-two {
+        right: 0;
+        bottom: 2%;
     }
 
 
-    /* GRID */
+    /* PROBLEM */
 
     .problem-grid,
     .services,
     .differential-grid {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .problem-card:last-child {
-
         grid-column: auto;
-
     }
 
+    .problem-grid,
+    .services {
+        margin-top: 45px;
+    }
 
     .problem-card {
-
-        min-height: 220px;
-
-    }
-
-
-    .problem-card h3 {
-
-        margin-top: 45px;
-
-    }
-
-
-    .section-header h2,
-    .differential-text h2 {
-
-        font-size: 42px;
-
-    }
-
-
-    .service {
-
         min-height: auto;
 
+        padding: 26px;
     }
 
+    .problem-card h3 {
+        margin-top: 45px;
+
+        font-size: 21px;
+    }
+
+
+    /* SOLUÇÃO */
+
+    .section-header {
+        gap: 22px;
+    }
+
+    .section-header > p {
+        font-size: 14px;
+    }
+
+    .service {
+        min-height: auto;
+
+        padding: 27px;
+    }
 
     .service .number {
-
         margin-top: 35px;
+    }
 
+    .service h3 {
+        font-size: 22px;
     }
 
 
-    /* PROCESS */
+    /* PROCESSO */
+
+    .process-list {
+        margin-top: 45px;
+    }
+
+    .process-list::before {
+        left: 0;
+    }
 
     .process-item {
-
         grid-template-columns:
-            55px
-            1fr
-            20px;
+            45px
+            minmax(0, 1fr);
 
-        gap: 10px;
+        gap: 12px;
 
-        padding: 24px 0;
-
+        padding:
+            24px 0;
     }
 
+    .process-item:hover {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
 
     .process-item h3 {
+        font-size: 19px;
+    }
 
-        font-size: 20px;
+    .process-item p {
+        font-size: 13px;
 
+        line-height: 1.65;
     }
 
 
-    .process-item p {
+    /* DIFERENCIAIS */
 
-        font-size: 13px;
+    .differential-container {
+        gap: 40px;
+    }
 
+    .differential-card {
+        min-height: auto;
+
+        padding: 27px;
+    }
+
+    .differential-card h3 {
+        margin-top: 22px;
     }
 
 
     /* CTA */
 
     .cta {
-
         padding:
             70px 0
             80px;
-
     }
 
-
     .cta-box {
-
         padding:
             55px 20px;
 
         border-radius: 22px;
-
     }
 
-
     .cta-box h2 {
+        font-size: 34px;
+    }
 
-        font-size: 38px;
-
+    .cta-box > p {
+        font-size: 14px;
     }
 
 
     /* FOOTER */
 
-    .footer-container {
+    .footer {
+        padding:
+            30px 0;
+    }
 
+    .footer-container {
         grid-template-columns: 1fr;
 
         gap: 18px;
-
     }
-
 
     .copyright {
-
         grid-column: auto;
-
     }
-
 
     .footer-links {
-
         flex-wrap: wrap;
 
+        gap:
+            12px
+            18px;
     }
-
 }
 
 
-/* =====================================================
-   CELULARES PEQUENOS
-===================================================== */
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+========================================================= */
 
 @media (max-width: 390px) {
 
-
-    .hero-visual {
-
-        transform:
-            scale(.67);
-
-        margin:
-            -65px 0;
-
+    .container {
+        width:
+            calc(100% - 24px);
     }
 
+    .logo {
+        font-size: 15px;
+    }
+
+    .logo img {
+        width: 39px;
+        height: 39px;
+    }
 
     .hero {
-
-        padding-bottom: 40px;
-
+        padding-top: 105px;
     }
 
-}
-
-/* =====================================================
-   ANIMAÇÕES AVANÇADAS — ORBITA
-===================================================== */
-
-
-/* ===============================
-   FUNDO ANIMADO
-================================ */
-
-.hero-background {
-    position: absolute;
-    inset: -20%;
-    z-index: 0;
-
-    background:
-        radial-gradient(
-            circle at 30% 40%,
-            rgba(55, 232, 137, .08),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 75% 60%,
-            rgba(19, 207, 160, .08),
-            transparent 25%
-        );
-
-    animation: backgroundMove 12s ease-in-out infinite alternate;
-}
-
-
-@keyframes backgroundMove {
-
-    0% {
-        transform: translate3d(-2%, -2%, 0) scale(1);
+    h1 {
+        font-size: 37px;
     }
 
-    100% {
-        transform: translate3d(2%, 2%, 0) scale(1.08);
+    h2 {
+        font-size: 33px;
     }
 
-}
-
-
-
-/* ===============================
-   ORBITA GIRANDO
-================================ */
-
-.orbit-ring {
-
-    animation:
-        orbitRotate 12s linear infinite;
-
-}
-
-
-@keyframes orbitRotate {
-
-    from {
-
-        transform:
-            translate(-50%, -50%)
-            rotate(-26deg);
-
+    .hero-visual {
+        min-height: 310px;
     }
 
-    to {
-
-        transform:
-            translate(-50%, -50%)
-            rotate(334deg);
-
+    .orbit {
+        width: 285px;
     }
 
-}
+    .orbit-center {
+        width: 72px;
 
-
-
-/* ===============================
-   CÍRCULO CENTRAL
-================================ */
-
-.orbit-center {
-
-    animation:
-        centerPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes centerPulse {
-
-    0%,
-    100% {
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-
-        box-shadow:
-            0 0 50px
-            rgba(55,232,137,.18);
-
+        font-size: 32px;
     }
 
-    50% {
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-
-        box-shadow:
-            0 0 90px
-            rgba(55,232,137,.35);
-
+    .orbit-arrow {
+        font-size: 42px;
     }
 
-}
+    .info-card {
+        max-width: 125px;
 
-
-
-/* ===============================
-   PONTOS ORBITAIS
-================================ */
-
-.dot-one {
-
-    animation:
-        satelliteFloat 4s ease-in-out infinite;
-
-}
-
-
-.dot-two {
-
-    animation:
-        satelliteFloat 5s ease-in-out infinite reverse;
-
-}
-
-
-@keyframes satelliteFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-        opacity: .7;
-
+        padding:
+            10px 11px;
     }
 
-    50% {
-
-        transform:
-            translateY(-15px);
-
-        opacity: 1;
-
+    .info-card strong {
+        font-size: 13px;
     }
 
-}
-
-
-
-/* ===============================
-   SETA
-================================ */
-
-.orbit-arrow {
-
-    animation:
-        arrowFloat 2.8s ease-in-out infinite;
-
-}
-
-
-@keyframes arrowFloat {
-
-    0%,
-    100% {
-
-        transform:
-            rotate(-10deg)
-            translate(0, 0);
-
+    .card-one {
+        left: -2px;
     }
 
-    50% {
-
-        transform:
-            rotate(-10deg)
-            translate(7px, -7px);
-
+    .card-two {
+        right: -2px;
     }
 
-}
-
-
-
-/* ===============================
-   CARDS DO HERO
-================================ */
-
-.card-one {
-
-    animation:
-        floatingCard 5s ease-in-out infinite;
-
-}
-
-
-.card-two {
-
-    animation:
-        floatingCard 6s ease-in-out infinite reverse;
-
-}
-
-
-@keyframes floatingCard {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
+    .process-item {
+        grid-template-columns:
+            38px
+            minmax(0, 1fr);
     }
 
-    50% {
-
-        transform:
-            translateY(-10px);
-
+    .process-item h3 {
+        font-size: 17px;
     }
-
 }
 
 
-
-/* ===============================
-   BOTÃO
-================================ */
-
-.button-primary {
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.button-primary::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -120%;
-
-    width: 80%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.35),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    transition: .6s;
-
-}
-
-
-.button-primary:hover::before {
-
-    left: 140%;
-
-}
-
-
-
-/* ===============================
-   PULSE NO CTA
-================================ */
-
-.cta-box {
-
-    animation:
-        ctaGlow 5s ease-in-out infinite alternate;
-
-}
-
-
-@keyframes ctaGlow {
-
-    from {
-
-        box-shadow:
-            0 0 0
-            rgba(55,232,137,0);
-
-    }
-
-    to {
-
-        box-shadow:
-            0 0 70px
-            rgba(55,232,137,.08);
-
-    }
-
-}
-
-
-
-/* ===============================
-   CARDS — HOVER MAIS VIVO
-================================ */
-
-.problem-card,
-.service,
-.differential-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.problem-card::before,
-.service::before,
-.differential-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-
-    height: 150px;
-
-    top: -80px;
-
-    right: -80px;
-
-    border-radius: 50%;
-
-    background:
-        var(--green);
-
-    opacity: 0;
-
-    filter: blur(70px);
-
-    transition:
-        opacity .4s ease;
-
-}
-
-
-.problem-card:hover::before,
-.service:hover::before,
-.differential-card:hover::before {
-
-    opacity: .18;
-
-}
-
-
-
-/* ===============================
-   ÍCONES
-================================ */
-
-.service-icon {
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-.service:hover .service-icon {
-
-    transform:
-        rotate(8deg)
-        scale(1.08);
-
-    box-shadow:
-        0 0 30px
-        rgba(55,232,137,.15);
-
-}
-
-
-
-/* ===============================
-   NÚMEROS DO PROCESSO
-================================ */
-
-.process-item > span {
-
-    transition:
-        transform .3s ease,
-        color .3s ease;
-
-}
-
-
-.process-item:hover > span {
-
-    transform:
-        translateX(8px);
-
-}
-
-
-
-/* ===============================
-   SETAS DO PROCESSO
-================================ */
-
-.process-item > strong {
-
-    transition:
-        transform .3s ease;
-
-}
-
-
-.process-item:hover > strong {
-
-    transform:
-        translateX(8px);
-
-}
-
-
-
-/* ===============================
-   LINHA DOS PROCESSOS
-================================ */
-
-.process-list {
-
-    position: relative;
-
-}
-
-
-.process-list::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    width: 2px;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--green),
-            transparent
-        );
-
-    opacity: .25;
-
-}
-
-
-
-/* ===============================
-   SCROLL REVEAL
-================================ */
-
-.reveal {
-
-    opacity: 0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1);
-
-}
-
-
-.reveal.visible {
-
-    opacity: 1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-
-/* ===============================
-   STAGGER DOS CARDS
-================================ */
-
-.problem-card:nth-child(2),
-.service:nth-child(2),
-.differential-card:nth-child(2) {
-
-    transition-delay: .12s;
-
-}
-
-
-.problem-card:nth-child(3),
-.service:nth-child(3),
-.differential-card:nth-child(3) {
-
-    transition-delay: .24s;
-
-}
-
-
-.differential-card:nth-child(4) {
-
-    transition-delay: .36s;
-
-}
-
-
-
-/* ===============================
-   BRILHO DOS EYEBROWS
-================================ */
-
-.eyebrow i {
-
-    animation:
-        eyebrowPulse 2s ease-in-out infinite;
-
-}
-
-
-@keyframes eyebrowPulse {
-
-    0%,
-    100% {
-
-        box-shadow:
-            0 0 8px
-            var(--green);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 0 25px
-            var(--green);
-
-    }
-
-}
-
-
-
-/* ===============================
-   TEXTO HERO
-================================ */
-
-.hero-content h1 {
-
-    animation:
-        heroTextIn 1s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-
-}
-
-
-.hero-content > p {
-
-    animation:
-        heroTextIn 1s .15s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-
-}
-
-
-.hero-buttons {
-
-    animation:
-        heroTextIn 1s .3s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-
-}
-
-
-.trust {
-
-    animation:
-        heroTextIn 1s .45s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-
-}
-
-
-@keyframes heroTextIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-
-/* ===============================
-   HERO VISUAL ENTRADA
-================================ */
-
-.hero-visual {
-
-    animation:
-        visualIn 1.2s
-        .2s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-
-}
-
-
-@keyframes visualIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(.85)
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-
-    }
-
-}
-
-
-
-/* ===============================
-   ACESSIBILIDADE
-================================ */
+/* =========================================================
+   ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-
         animation-duration: 0.01ms !important;
 
         animation-iteration-count: 1 !important;
@@ -2776,43 +2287,39 @@ p {
         transition-duration: 0.01ms !important;
 
         scroll-behavior: auto !important;
-
     }
-
 }
 
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
 
-/* ===============================
-   CELULAR
-================================ */
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1);
+}
 
-@media (max-width: 720px) {
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .orbit-ring {
+.problem-card:nth-child(2),
+.service:nth-child(2),
+.differential-card:nth-child(2) {
+    transition-delay: .08s;
+}
 
-        animation-duration:
-            18s;
+.problem-card:nth-child(3),
+.service:nth-child(3),
+.differential-card:nth-child(3) {
+    transition-delay: .16s;
+}
 
-    }
-
-
-    .hero-visual {
-
-        animation:
-            visualIn 1s .2s
-            cubic-bezier(.2,.8,.2,1)
-            both;
-
-    }
-
-
-    .problem-card:hover,
-    .service:hover {
-
-        transform:
-            translateY(-3px);
-
-    }
-
+.differential-card:nth-child(4) {
+    transition-delay: .24s;
 }
