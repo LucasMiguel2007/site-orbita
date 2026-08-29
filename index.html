@@ -2,222 +2,121 @@
 <html lang="pt-BR">
 
 <head>
-
-    <!-- =====================================================
-         CONFIGURAÇÕES BÁSICAS
-         ===================================================== -->
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        http-equiv="content-language"
-        content="pt-BR"
-    >
+    <title>Orbita | Aquisição de Potenciais Clientes</title>
 
-    <meta
-        name="theme-color"
-        content="#000000"
-    >
+    <meta name="description"
+        content="A Orbita ajuda empresas a gerar potenciais clientes e novas oportunidades comerciais através de estratégia, tecnologia e aquisição inteligente.">
 
+    <meta name="keywords"
+        content="aquisição de clientes, geração de leads, potenciais clientes, prospecção comercial, geração de oportunidades, clientes para empresas">
 
-    <!-- =====================================================
-         SEO PRINCIPAL
-         ===================================================== -->
+    <meta name="author" content="Orbita">
 
-    <title>
-        Órbita | Criação de Sites Profissionais para Empresas
-    </title>
+    <meta name="robots" content="index, follow">
 
-    <meta
-        name="description"
-        content="A Órbita cria sites profissionais, responsivos e estratégicos para empresas que querem fortalecer sua presença digital, gerar oportunidades e crescer no Google."
-    >
+    <meta name="theme-color" content="#020b1d">
 
-    <meta
-        name="author"
-        content="Lucas Miguel | Órbita"
-    >
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Orbita | Aquisição de Potenciais Clientes">
+    <meta property="og:description"
+        content="Estratégias para colocar sua empresa diante das pessoas certas e gerar novas oportunidades comerciais.">
+    <meta property="og:image" content="orbita-logo.png">
 
-    <meta
-        name="robots"
-        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    >
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="orbita-logo.png">
 
-    <meta
-        name="googlebot"
-        content="index, follow"
-    >
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- =====================================================
-         OPEN GRAPH
-         ===================================================== -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    <meta
-        property="og:locale"
-        content="pt_BR"
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:title"
-        content="Órbita | Criação de Sites Profissionais para Empresas"
-    >
-
-    <meta
-        property="og:description"
-        content="Sites profissionais, responsivos e estratégicos para empresas que querem fortalecer sua presença digital e gerar novas oportunidades."
-    >
-
-    <meta
-        property="og:site_name"
-        content="Órbita"
-    >
-
-
-    <!-- =====================================================
-         TWITTER / X
-         ===================================================== -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Órbita | Criação de Sites Profissionais para Empresas"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Sites profissionais, responsivos e estratégicos para empresas."
-    >
-
-
-    <!-- =====================================================
-         CSS
-         ===================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-
-    <!-- =====================================================
-         FAVICON
-         ===================================================== -->
-
-    <link
-        rel="icon"
-        type="image/png"
-        href="logo orbita.png"
-    >
-
-
-    <!-- =====================================================
-         DADOS ESTRUTURADOS — ORGANIZAÇÃO
-         ===================================================== -->
-
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Órbita",
-        "alternateName": "Orbita",
-        "description": "Empresa de desenvolvimento de sites profissionais, responsivos e estratégicos para empresas.",
-        "founder": {
-            "@type": "Person",
-            "name": "Lucas Miguel"
-        },
-        "sameAs": [
-            "https://www.instagram.com/orbitacoding/"
-        ]
+        "name": "Orbita",
+        "description": "Empresa especializada em aquisição de potenciais clientes e geração de oportunidades comerciais.",
+        "logo": "orbita-logo.png"
     }
     </script>
 
 </head>
 
+
 <body>
 
+    <!-- ACESSIBILIDADE -->
 
-    <!-- =====================================================
-         HEADER / NAVEGAÇÃO
-         ===================================================== -->
+    <a href="#conteudo" class="skip-link">
+        Pular para o conteúdo
+    </a>
 
-    <header class="site-header">
 
-        <div class="container header-container">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-            <!-- Logo -->
-            <a
-                href="#inicio"
-                class="logo"
-                aria-label="Orbita - Página inicial"
-            >
-                    <img
-        src="image-removebg-preview (15).png"
-        alt="Orbita — criação de sites profissionais"
-    >
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <a href="#inicio" class="logo">
+
+                <img src="ca47614e-3542-4a34-bba8-38dc69c1910a.png"
+                    alt="Logo Orbita - Aquisição de Potenciais Clientes">
+
+                <span>
+                    ORBIT<span>A</span>
+                </span>
+
             </a>
 
 
-            <!-- Navegação principal -->
-            <nav
-                class="main-navigation"
-                aria-label="Navegação principal"
-            >
+            <!-- MENU DESKTOP -->
 
-                <ul class="navigation-list">
+            <nav class="nav" id="nav">
 
-                    <li class="navigation-item">
-                        <a href="#projetos">Projetos</a>
-                    </li>
+                <a href="#solucao">
+                    Solução
+                </a>
 
-                    <li class="navigation-item">
-                        <a href="#servicos">Serviços</a>
-                    </li>
+                <a href="#processo">
+                    Como funciona
+                </a>
 
-                    <li class="navigation-item">
-                        <a href="#processo">Processo</a>
-                    </li>
+                <a href="#diferenciais">
+                    Diferenciais
+                </a>
 
-                    <li class="navigation-item">
-                        <a href="#sobre">Sobre</a>
-                    </li>
-
-                    <li class="navigation-item">
-                        <a href="#contato">Contato</a>
-                    </li>
-
-                </ul>
+                <a href="#contato" class="nav-button">
+                    Quero oportunidades
+                </a>
 
             </nav>
 
 
-            <!-- CTA do Header -->
+            <!-- MENU MOBILE -->
 
-            <!-- Menu mobile -->
-            <button
-                type="button"
-                class="menu-toggle"
+            <button class="menu-button"
                 aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
+                aria-expanded="false">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
         </div>
@@ -226,74 +125,131 @@
 
 
 
-    <main>
+    <main id="conteudo">
 
 
-        <!-- =================================================
-             SESSÃO 01 — HERO
-             ================================================= -->
+        <!-- =========================
+             HERO
+        ========================== -->
 
-        <section
-            id="inicio"
-            class="hero-section"
-        >
+        <section class="hero" id="inicio">
+
+            <div class="hero-background"></div>
 
             <div class="container hero-container">
 
+
+                <!-- TEXTO -->
+
                 <div class="hero-content">
 
-                    <h1 class="hero-title">
-                        Criação de sites profissionais para empresas que querem crescer no digital.
+
+                    <h1>
+
+                        Seu próximo cliente pode estar a
+                        
+                        <strong>
+                            uma estratégia
+                        </strong>
+
+                        de distância.
+
                     </h1>
 
-                    <p class="hero-description">
-                        A Orbita desenvolve sites profissionais, responsivos e estratégicos
-                        para empresas que querem fortalecer sua presença digital, transmitir
-                        credibilidade, conquistar novos clientes e ampliar suas oportunidades.
+
+                    <p>
+
+                        A Orbita cria estratégias para colocar sua empresa
+                        diante das pessoas certas, gerar oportunidades
+                        comerciais e transformar interesse em conversas
+                        que podem virar negócio.
+
                     </p>
 
 
-                    <!-- CTAs -->
-                    <div class="hero-actions">
+                    <div class="hero-buttons">
 
-                                            <a
-                        href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Quero%20criar%20um%20site%20para%20minha%20empresa."
-                        class="button button-primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        QUERO CRIAR MEU SITE
-                        <span aria-hidden="true">→</span>
-                    </a>
+                        <a href="#contato"
+                            class="button button-primary">
 
-                        <a
-                            href="#projetos"
-                            class="button button-secondary"
-                        >
-                            VER PROJETOS
+                            Quero gerar oportunidades
+
+                        </a>
+
+
+                        <a href="#processo"
+                            class="button button-secondary">
+
+                            Entender a estratégia
+
                         </a>
 
                     </div>
 
-
-
                 </div>
 
 
-                <!-- Elemento visual do Hero -->
-                <div
-                    class="hero-visual"
-                    aria-hidden="true"
-                >
 
-                    <!--
-                        Área reservada para:
-                        - Mockup
-                        - Animação
-                        - Elemento 3D
-                        - Ilustração
-                        - Composição visual
-                    -->
+                <!-- VISUAL -->
+
+                <div class="hero-visual">
+
+
+                    <div class="orbit">
+
+                        <div class="orbit-circle"></div>
+
+                        <div class="orbit-ring"></div>
+
+                        <div class="orbit-center">
+
+                            <span>+</span>
+
+                        </div>
+
+                        <div class="orbit-dot dot-one"></div>
+
+                        <div class="orbit-dot dot-two"></div>
+
+                        <div class="orbit-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card card-one">
+
+                        <span>
+                            FOCO
+                        </span>
+
+                        <strong>
+                            ICP
+                        </strong>
+
+                        <small>
+                            Cliente ideal
+                        </small>
+
+                    </div>
+
+
+                    <div class="info-card card-two">
+
+                        <span>
+                            OBJETIVO
+                        </span>
+
+                        <strong>
+                            LEADS → VENDAS
+                        </strong>
+
+                        <small>
+                            Mais oportunidades qualificadas
+                        </small>
+
+                    </div>
 
                 </div>
 
@@ -303,78 +259,108 @@
 
 
 
-        <!-- =================================================
-             SESSÃO 02 — APRESENTAÇÃO
-             ================================================= -->
+        <!-- =========================
+             PROBLEMA
+        ========================== -->
 
-        <section
-            id="apresentacao"
-            class="presentation-section"
-        >
+        <section class="problem section dark-section">
 
             <div class="container">
 
-                <div class="section-heading">
 
-                    <h2 class="section-title">
-                        Sua empresa merece uma presença digital à altura.
+                <div class="section-intro">
+
+
+                    <h2>
+
+                        Ter um bom produto não basta se
+
+                        <em>
+                            as pessoas certas
+                        </em>
+
+                        não chegam até você.
+
                     </h2>
 
-                    <p class="section-description">
-                        Seu site é muitas vezes o primeiro contato entre
-                        sua empresa e um possível cliente.
-                    </p>
 
-                    <p class="section-description">
-                        Por isso, desenvolvemos experiências digitais que
-                        apresentam sua marca com profissionalismo, clareza
-                        e credibilidade em qualquer dispositivo.
+                    <p>
+
+                        Muitas empresas dependem apenas de indicação,
+                        publicações aleatórias ou anúncios sem estratégia.
+                        O resultado é um comercial que precisa correr
+                        atrás de oportunidades o tempo todo.
+
                     </p>
 
                 </div>
 
 
-                <!-- Destaques -->
 
-                <div class="features-grid">
+                <div class="problem-grid">
 
-                    <article class="feature-card">
+
+                    <article class="problem-card">
+
+                        <span>
+                            01
+                        </span>
 
                         <h3>
-                            Design estratégico
+                            Poucas oportunidades
                         </h3>
 
                         <p>
-                            Design estratégico, hierarquia visual e experiência de usuário projetados para reforçar o posicionamento da sua marca e transmitir credibilidade em cada interação.
+
+                            Seu time comercial passa mais tempo procurando
+                            clientes do que conversando com eles.
+
                         </p>
 
                     </article>
 
 
-                    <article class="feature-card">
+
+                    <article class="problem-card">
+
+                        <span>
+                            02
+                        </span>
 
                         <h3>
-                            Experiência responsiva
+                            Prospecção sem direção
                         </h3>
 
                         <p>
-                            Layout responsivo e adaptativo, garantindo navegação, legibilidade e usabilidade consistentes em celulares, tablets e computadores.
+
+                            Você prospecta, mas não existe um processo
+                            consistente para encontrar o público certo.
+
                         </p>
 
                     </article>
 
 
-                    <article class="feature-card">
+
+                    <article class="problem-card">
+
+                        <span>
+                            03
+                        </span>
 
                         <h3>
-                            Desenvolvimento personalizado
+                            Interesse que não vira negócio
                         </h3>
 
                         <p>
-                            Estrutura, funcionalidades e experiência desenvolvidas sob medida, alinhadas aos objetivos, público-alvo e necessidades específicas do seu negócio.
+
+                            Existem contatos chegando, mas falta estrutura
+                            para transformar atenção em oportunidade comercial.
+
                         </p>
 
                     </article>
+
 
                 </div>
 
@@ -384,332 +370,176 @@
 
 
 
-        <!-- =================================================
-     SESSÃO 03 — PORTFÓLIO
-     ================================================= -->
+        <!-- =========================
+     SOLUÇÃO
+========================== -->
 
-<section
-    id="projetos"
-    class="portfolio-section"
->
+<section class="solution section" id="solucao">
 
     <div class="container">
 
-        <div class="section-heading">
+        <div class="section-header">
 
+            <div>
 
-            <h2 class="section-title">
-                Projetos que falam por nós.
-            </h2>
+                <h2>
 
-            <p class="section-description">
-                Conheça alguns dos projetos desenvolvidos pela Orbita e veja como criamos sites estratégicos, responsivos e personalizados, projetados para apresentar marcas com profissionalismo, organizar informações e transformar visitantes em potenciais clientes.
-            </p>
+                    Encontre os clientes certos
 
-        </div>
+                    <strong>
+                        antes de começar a vender.
+                    </strong>
 
-
-        <!-- Projetos -->
-
-        <div class="projects-grid">
-
-
-            <!-- =================================================
-                 PROJETO 01 — CLÍNICA ESSENZA
-                 ================================================= -->
-
-            <article class="project-card">
-
-                <a
-                    href="https://site-de-clinica-de-estetica.vercel.app/"
-                    class="project-image"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver projeto Clínica Essenza"
-                >
-
-                    <!-- Imagem do projeto -->
-
-                </a>
-
-                <div class="project-content">
-
-                    <p class="project-category">
-                        Clínica de Estética
-                    </p>
-
-                    <h3 class="project-title">
-                        Clínica Essenza
-                    </h3>
-
-                    <p class="project-description">
-                        Site institucional desenvolvido para
-                        apresentar serviços, fortalecer a marca
-                        e facilitar o contato com novos clientes.
-                    </p>
-
-                    <a
-                        href="https://site-de-clinica-de-estetica.vercel.app/"
-                        class="project-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VER PROJETO
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 PROJETO 02 — IMOBILIÁRIA PRIME
-                 ================================================= -->
-
-            <article class="project-card">
-
-                <a
-                    href="https://lucasmiguel2007.github.io/site-imobiliaria/"
-                    class="project-image"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver projeto Imobiliária Prime"
-                >
-
-                    <!-- Imagem do projeto -->
-
-                </a>
-
-                <div class="project-content">
-
-                    <p class="project-category">
-                        Mercado Imobiliário
-                    </p>
-
-                    <h3 class="project-title">
-                        Imobiliária Prime
-                    </h3>
-
-                    <p class="project-description">
-                        Experiência digital criada para apresentar
-                        imóveis de forma organizada, moderna e
-                        profissional.
-                    </p>
-
-                    <a
-                        href="https://lucasmiguel2007.github.io/site-imobiliaria/"
-                        class="project-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VER PROJETO
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-                <!-- =================================================
-                    PROJETO 03 — VOLTIZE
-                    ================================================= -->
-
-                <article class="project-card">
-
-                    <a
-                        href="https://lucasmiguel2007.github.io/site-voltize-eltrica/"
-                        class="project-image"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Ver projeto Voltize"
-                    >
-
-                        <!-- Imagem do projeto -->
-
-                    </a>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            Energia Solar
-                        </p>
-
-                        <h3 class="project-title">
-                            Voltize
-                        </h3>
-
-                        <p class="project-description">
-                            Site institucional desenvolvido para
-                            apresentar soluções, transmitir credibilidade
-                            e gerar novas oportunidades comerciais.
-                        </p>
-
-                        <a
-                            href="https://lucasmiguel2007.github.io/site-voltize-eltrica/"
-                            class="project-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            VER PROJETO
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                    PROJETO 04 — INFOPRODUTO
-                    ================================================= -->
-
-                <article class="project-card">
-
-                    <a
-                        href="https://lucasmiguel2007.github.io/site-infoproduto/"
-                        class="project-image"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Ver projeto para infoprodutores"
-                    >
-
-                        <!-- Imagem do projeto -->
-
-                    </a>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            Infoprodutos
-                        </p>
-
-                        <h3 class="project-title">
-                            Site para infoprodutores
-                        </h3>
-
-                        <p class="project-description">
-                            Uma experiência digital moderna para
-                            apresentar infoprodutos de forma clara,
-                            profissional e estratégica.
-                        </p>
-
-                        <a
-                            href="https://lucasmiguel2007.github.io/site-infoproduto/"
-                            class="project-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            VER PROJETO
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
+                </h2>
 
             </div>
 
-        </div>
+            <p>
 
-    </section>
+                A Orbita pesquisa, identifica e organiza potenciais
+                clientes que correspondem ao perfil ideal do seu negócio,
+                entregando uma lista pronta para sua equipe prospectar.
 
-
-        <!-- =================================================
-             SESSÃO 04 — PROBLEMA
-             ================================================= -->
-
-    <section id="problema" class="problem-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2 class="section-title">
-                Seu site precisa fazer mais do que existir.
-            </h2>
-
-            <p class="section-description">
-                Um site profissional não deve apenas apresentar sua empresa.
-                Ele precisa comunicar seu posicionamento, transmitir credibilidade,
-                facilitar a navegação e orientar o visitante até uma ação.
-                Confira 3 problemas que podem fazer seu site perder oportunidades de negócio.
             </p>
 
         </div>
 
 
-        <div class="problem-grid">
+        <div class="services">
 
 
-            <!-- Problema 01 -->
+            <!-- 01 -->
 
-            <article class="problem-card">
+            <article class="service featured">
+
+                <div class="service-icon">
+                    ◎
+                </div>
+
+                <span class="number">
+                    01
+                </span>
 
                 <h3>
-                    Primeira impressão fraca
+                    Definição do cliente ideal
                 </h3>
 
                 <p>
-                    O visitante forma uma percepção sobre sua empresa em poucos segundos.
-                    Um design desatualizado, visual genérico ou falta de informações relevantes
-                    pode transmitir pouca credibilidade e fazer o potencial cliente procurar
-                    outra empresa antes mesmo de conhecer seus serviços.
+
+                    Identificamos o perfil de empresa ou pessoa que
+                    possui maior potencial para comprar sua solução.
+
                 </p>
+
+
+                <ul>
+
+                    <li>
+                        Perfil de cliente ideal
+                    </li>
+
+                    <li>
+                        Segmentação do público
+                    </li>
+
+                    <li>
+                        Critérios de busca
+                    </li>
+
+                </ul>
 
             </article>
 
 
-            <!-- Problema 02 -->
 
-            <article class="problem-card">
+            <!-- 02 -->
+
+            <article class="service">
+
+                <div class="service-icon">
+                    ⌕
+                </div>
+
+                <span class="number">
+                    02
+                </span>
 
                 <h3>
-                    Informação desorganizada
+                    Pesquisa de potenciais clientes
                 </h3>
 
                 <p>
-                    Quando serviços, diferenciais, informações de contato e chamadas para ação
-                    estão mal distribuídos, o visitante precisa procurar o que precisa.
-                    Quanto maior o esforço para encontrar uma informação, maior a chance de
-                    abandonar o site sem entrar em contato.
+
+                    Pesquisamos empresas e pessoas que correspondem
+                    aos critérios definidos para encontrar oportunidades
+                    com maior potencial de compra.
+
                 </p>
+
+
+                <ul>
+
+                    <li>
+                        Busca direcionada
+                    </li>
+
+                    <li>
+                        Filtragem de potenciais clientes
+                    </li>
+
+                    <li>
+                        Seleção por perfil
+                    </li>
+
+                </ul>
 
             </article>
 
 
-            <!-- Problema 03 -->
 
-            <article class="problem-card">
+            <!-- 03 -->
+
+            <article class="service">
+
+                <div class="service-icon">
+                    ↗
+                </div>
+
+                <span class="number">
+                    03
+                </span>
 
                 <h3>
-                    Falta de direcionamento
+                    Lista pronta para prospecção
                 </h3>
 
                 <p>
-                    Um site pode receber visitantes e ainda assim gerar poucas oportunidades.
-                    Sem chamadas para ação claras, contatos acessíveis e uma estrutura pensada
-                    para conduzir o usuário, o potencial cliente pode simplesmente sair da página
-                    sem solicitar um orçamento ou iniciar uma conversa.
+
+                    Você recebe os potenciais clientes organizados
+                    para iniciar sua prospecção comercial e transformar
+                    oportunidades em vendas.
+
                 </p>
+
+
+                <ul>
+
+                    <li>
+                        Lista organizada de leads
+                    </li>
+
+                    <li>
+                        Informações para contato
+                    </li>
+
+                    <li>
+                        Pronta para sua prospecção
+                    </li>
+
+                </ul>
 
             </article>
 
-        </div>
-
-
-        <div class="section-heading problem-solution">
-
-            <p class="section-description">
-                <br>
-                <br>
-                A Órbita transforma esses pontos em oportunidades: desenvolvemos
-                sites profissionais e estratégicos, com estrutura, conteúdo e experiência
-                pensados para apresentar melhor sua empresa e facilitar a conversão
-                de visitantes em potenciais clientes.
-            </p>
 
         </div>
 
@@ -718,675 +548,350 @@
 </section>
 
 
-        <!-- =================================================
-             SESSÃO 05 — SOLUÇÃO
-             ================================================= -->
+ <!-- =========================
+     PROCESSO
+========================== -->
 
-        <section
-            id="solucao"
-            class="solution-section"
-        >
+<section class="process section dark-section"
+    id="processo">
 
-            <div class="container">
+    <div class="container">
 
-                <div class="solution-content">
+        <div class="section-header">
 
-                    <div class="section-heading">
+            <div>
 
-                        <h2 class="section-title">
-                            É aí que a Orbita entra.
-                        </h2>
+                <h2>
 
-                        <p class="section-description">
-                            Criamos sites que unem
-                            <strong>design, tecnologia e estratégia</strong>
-                            para transformar a presença digital da sua empresa.
-                        </p>
+                    Do perfil ideal à
 
-                    </div>
+                    <strong>
+                        lista de potenciais clientes.
+                    </strong>
 
-
-                    <div class="solution-grid">
-
-
-                        <article class="solution-card">
-
-                            <h3>
-                                Mais profissionalismo
-                            </h3>
-
-                            <p>
-                                Uma presença digital estruturada para refletir o posicionamento, a qualidade e a credibilidade da sua empresa em cada ponto de contato com o cliente.
-                            </p>
-
-                        </article>
-
-
-                        <article class="solution-card">
-
-                            <h3>
-                                Mais clareza
-                            </h3>
-
-                            <p>
-                                Arquitetura de informação e hierarquia de conteúdo estruturadas para reduzir o atrito, facilitar a navegação e conduzir o visitante até as informações e ações mais relevantes.
-                            </p>
-
-                        </article>
-
-
-                        <article class="solution-card">
-
-                            <h3>
-                                Mais oportunidades
-                            </h3>
-
-                            <p>
-                                Estrutura orientada à conversão, com hierarquia de conteúdo, chamadas para ação e fluxos estratégicos projetados para estimular contatos e facilitar a tomada de decisão.
-                            </p>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SESSÃO 06 — SERVIÇOS
-             ================================================= -->
-
-        <section
-            id="servicos"
-            class="services-section"
-        >
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2 class="section-title">
-                        Soluções digitais para o seu negócio.
-                    </h2>
-
-                    <p class="section-description">
-                        Do primeiro layout ao lançamento, cuidamos de
-                        toda a experiência digital.
-                    </p>
-
-                </div>
-
-
-                <div class="services-grid">
-
-
-                    <!-- Serviço 01 -->
-
-                    <article class="service-card">
-
-                        <h3>
-                            Sites Institucionais
-                        </h3>
-
-                        <p>
-                            Apresente sua empresa, serviços e diferenciais
-                            com uma presença digital profissional.
-                        </p>
-
-                                        <a
-                        href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20sites%20da%20Orbita."
-                        class="service-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        SAIBA MAIS
-                        <span aria-hidden="true">→</span>
-                    </a>
-                    </article>
-
-
-                    <!-- Serviço 02 -->
-
-                    <article class="service-card">
-
-                        <h3>
-                            Landing Pages
-                        </h3>
-
-                        <p>
-                            Páginas desenvolvidas para campanhas, serviços,
-                            produtos e geração de oportunidades.
-                        </p>
-                        <a
-                            href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20sites%20da%20Orbita."
-                            class="service-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SAIBA MAIS
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </article>
-
-
-                    <!-- Serviço 03 -->
-
-                    <article class="service-card">
-
-                        <h3>
-                            Sites para Negócios
-                        </h3>
-
-                        <p>
-                            Soluções personalizadas para empresas que
-                            precisam de uma presença digital moderna
-                            e eficiente.
-                        </p>
-
-                                                <a
-                            href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20sites%20da%20Orbita."
-                            class="service-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SAIBA MAIS
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </article>
-
-
-                    <!-- Serviço 04 -->
-
-                    <article class="service-card">
-
-                        <h3>
-                            Manutenção &amp; Evolução
-                        </h3>
-
-                        <p>
-                            Aprimoramentos, atualizações e novas
-                            funcionalidades para manter seu site
-                            sempre evoluindo.
-                        </p>
-
-                                            <a
-                        href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20sites%20da%20Orbita."
-                        class="service-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        SAIBA MAIS
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SESSÃO 07 — DIFERENCIAIS
-             ================================================= -->
-
-        <section
-            id="diferenciais"
-            class="differentials-section"
-        >
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2 class="section-title">
-                        Por que escolher a Orbita?
-                    </h2>
-    
-                </div>
-
-
-                <div class="differentials-grid">
-
-
-                    <!-- Diferencial 01 -->
-
-                    <article class="differential-card">
-
-                        <h3>
-                            Design personalizado
-                        </h3>
-
-                        <p>
-                            Desenvolvemos interfaces personalizadas a partir da identidade visual, posicionamento e objetivos da sua empresa, combinando hierarquia visual, tipografia, cores, componentes e experiência de navegação para criar uma presença digital consistente, reconhecível e estrategicamente orientada à conversão.
-                        </p>
-
-                    </article>
-
-
-                    <!-- Diferencial 02 -->
-
-                    <article class="differential-card">
-
-                        <h3>
-                            Responsividade
-                        </h3>
-
-                        <p>
-                            Desenvolvemos interfaces responsivas que se adaptam a diferentes tamanhos de tela, mantendo hierarquia visual, legibilidade, navegação e desempenho em smartphones, tablets e computadores. Assim, sua empresa entrega uma experiência profissional ao cliente independentemente do dispositivo utilizado.
-                        </p>
-
-                    </article>
-
-
-                    <!-- Diferencial 03 -->
-
-                    <article class="differential-card">
-
-                        <h3>
-                            Performance
-                        </h3>
-
-                        <p>
-                            Estruturamos cada página para facilitar a localização das informações, reduzir etapas desnecessárias e conduzir o visitante de forma intuitiva até as principais ações, como conhecer seus serviços, solicitar um orçamento ou entrar em contato com sua empresa.
-                        </p>
-
-                    </article>
-
-
-                    <!-- Diferencial 04 -->
-
-                    <article class="differential-card">
-
-
-                        <h3>
-                            Atendimento próximo
-                        </h3>
-
-                        <p>
-                           Você participa das principais etapas do projeto, acompanha a evolução do site e mantém contato direto durante o desenvolvimento. Dessa forma, cada decisão pode ser alinhada aos objetivos, à identidade e às necessidades específicas da sua empresa.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SESSÃO 08 — PROCESSO
-             ================================================= -->
-
-        <section
-            id="processo"
-            class="process-section"
-        >
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2 class="section-title">
-                        Do primeiro contato ao lançamento.
-                    </h2>
-
-                    <p class="section-description">
-                        Um processo simples, transparente e pensado para
-                        transformar sua ideia em uma presença digital
-                        profissional.
-                    </p>
-
-                </div>
-
-
-                <ol class="process-list">
-
-
-                    <!-- Etapa 01 -->
-
-                    <li class="process-item">
-
-                        <span class="process-number">
-                            01
-                        </span>
-
-                        <div class="process-content">
-
-                            <h3>
-                                Entendemos seu negócio.
-                            </h3>
-
-                            <p>
-                               Analisamos sua empresa, público-alvo, posicionamento, objetivos e necessidades para definir uma estrutura digital coerente com sua estratégia. Assim, o site não é desenvolvido a partir de um modelo genérico, mas pensado para comunicar seu valor e atender às demandas reais do seu negócio..
-                            </p>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- Etapa 02 -->
-
-                    <li class="process-item">
-
-                        <span class="process-number">
-                            02
-                        </span>
-
-                        <div class="process-content">
-
-                            <h3>
-                                Planejamos sua experiência.
-                            </h3>
-
-                            <p>
-                                Definimos a arquitetura das páginas, hierarquia das informações, direcionamento do conteúdo e aplicação da identidade visual, estabelecendo uma base estratégica para que o site tenha comunicação consistente, navegação intuitiva e uma apresentação alinhada ao posicionamento da sua empresa.
-                            </p>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- Etapa 03 -->
-
-                    <li class="process-item">
-
-                        <span class="process-number">
-                            03
-                        </span>
-
-                        <div class="process-content">
-
-                            <h3>
-                                Transformamos o projeto em realidade.
-                            </h3>
-
-                            <p>
-                                Transformamos a estrutura definida em uma interface funcional, responsiva e otimizada, garantindo adaptação a diferentes dispositivos, navegação fluida, carregamento eficiente e consistência visual. Cada elemento é desenvolvido para entregar uma experiência profissional e alinhada aos objetivos do seu negócio.
-                            </p>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- Etapa 04 -->
-
-                    <li class="process-item">
-
-                        <span class="process-number">
-                            04
-                        </span>
-
-                        <div class="process-content">
-
-                            <h3>
-                                Colocamos seu projeto no ar.
-                            </h3>
-
-                            <p>
-                                Realizamos os ajustes finais de layout, conteúdo, responsividade e funcionamento, revisando a experiência em diferentes dispositivos e corrigindo possíveis inconsistências. Após essa etapa, o site está preparado para representar sua empresa com profissionalismo e oferecer uma experiência digital consistente aos seus clientes.
-                            </p>
-
-                        </div>
-
-                    </li>
-
-                </ol>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SESSÃO 09 — SOBRE
-             ================================================= -->
-
-        <section
-            id="sobre"
-            class="about-section"
-        >
-
-            <div class="container about-container">
-
-                <div class="about-content">
-
-
-                    <h2 class="section-title">
-                        Tecnologia, design e estratégia em um só lugar.
-                    </h2>
-
-                    <p class="section-description">
-                        A Órbita nasceu com um objetivo claro: ajudar empresas a transformar sua presença digital em uma extensão profissional da própria marca.
-                        <br>
-                        <br>
-                        Unimos desenvolvimento web, design e estratégia para construir sites personalizados, responsivos e orientados a objetivos reais de negócio. Cada projeto é estruturado para comunicar o valor da empresa, facilitar a jornada do visitante e criar oportunidades de conversão.
-                        <br>
-                        <br>
-                        Mais do que desenvolver páginas, criamos experiências digitais que posicionam sua empresa de forma profissional e preparada para crescer.
-                    </p>
-
-                </div>
-
-
-                <!-- Área visual -->
-
-                <div
-                    class="about-visual"
-                    aria-hidden="true"
-                >
-
-                    <!--
-                        Área reservada para:
-                        - Foto
-                        - Mockup
-                        - Identidade visual
-                        - Elemento gráfico
-                    -->
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SESSÃO 11 — FAQ
-             ================================================= -->
-
-        <section
-            id="faq"
-            class="faq-section"
-        >
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2 class="section-title">
-                        Ainda ficou com alguma dúvida?
-                    </h2>
-
-                </div>
-
-
-                <div class="faq-list">
-
-
-                    <!-- Pergunta 01 -->
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Quanto custa criar um site?
-                        </summary>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                O investimento depende do tipo de projeto,
-                                quantidade de páginas e funcionalidades.
-                                Entre em contato para receber uma proposta
-                                personalizada.
-                            </p>
-
-                        </div>
-
-                    </details>
-
-
-                    <!-- Pergunta 02 -->
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Quanto tempo leva para desenvolver um site?
-                        </summary>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                O prazo varia de acordo com a complexidade
-                                do projeto. Após entender sua necessidade,
-                                apresentamos um prazo estimado.
-                            </p>
-
-                        </div>
-
-                    </details>
-
-
-                    <!-- Pergunta 03 -->
-
-                    <details class="faq-item">
-
-                        <summary>
-                            O site funciona no celular?
-                        </summary>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Sim. Todos os projetos são desenvolvidos
-                                para oferecer uma experiência adequada em
-                                celulares, tablets e computadores.
-                            </p>
-
-                        </div>
-
-                    </details>
-
-
-                    <!-- Pergunta 04 -->
-
-                    <details class="faq-item">
-
-                        <summary>
-                            O site é personalizado?
-                        </summary>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Sim. Desenvolvemos cada projeto de acordo
-                                com a identidade, objetivos e necessidades
-                                da empresa.
-                            </p>
-
-                        </div>
-
-                    </details>
-
-
-                    <!-- Pergunta 05 -->
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Posso solicitar alterações durante o projeto?
-                        </summary>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Sim. O desenvolvimento possui etapas de
-                                alinhamento e revisão para garantir que
-                                o resultado esteja de acordo com o esperado.
-                            </p>
-
-                        </div>
-
-                    </details>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SESSÃO 12 — CTA FINAL
-             ================================================= -->
-
-        <section
-            id="contato"
-            class="cta-section"
-        >
-
-            <div class="container cta-container">
-
-                <h2 class="cta-title">
-                    Pronto para colocar sua empresa em órbita?
                 </h2>
 
-                <p class="cta-description">
-                    Conte para um de nossos agentes sobre o seu negócio e descubra como podemos
-                    transformar sua presença digital em uma experiência
-                    profissional, moderna e estratégica.
-                </p>
+            </div>
+
+            <p>
+
+                Um processo simples e direcionado para encontrar
+                potenciais clientes que realmente fazem sentido
+                para o seu negócio.
+
+            </p>
+
+        </div>
 
 
-                <div class="cta-actions">
+        <ol class="process-list">
 
-                                        <a
-                        href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Quero%20criar%20um%20site%20para%20minha%20empresa."
-                        class="button button-primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        QUERO CRIAR MEU SITE
-                        <span aria-hidden="true">→</span>
+
+            <!-- 01 -->
+
+            <li class="process-item">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Entendemos seu negócio
+                    </h3>
+
+                    <p>
+
+                        Conhecemos sua empresa, sua solução,
+                        seu mercado e o tipo de cliente que
+                        você deseja alcançar.
+
+                    </p>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- 02 -->
+
+            <li class="process-item">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Definimos o cliente ideal
+                    </h3>
+
+                    <p>
+
+                        Estabelecemos os critérios que um potencial
+                        cliente precisa atender para fazer parte
+                        da lista.
+
+                    </p>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- 03 -->
+
+            <li class="process-item">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Pesquisamos os potenciais clientes
+                    </h3>
+
+                    <p>
+
+                        Realizamos uma pesquisa direcionada para
+                        encontrar empresas ou pessoas que correspondam
+                        ao perfil definido.
+
+                    </p>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- 04 -->
+
+            <li class="process-item">
+
+                <span>
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Entregamos a lista
+                    </h3>
+
+                    <p>
+
+                        Você recebe os potenciais clientes
+                        organizados para iniciar sua prospecção
+                        e entrar em contato com novas oportunidades.
+
+                    </p>
+
+                </div>
+
+            </li>
+
+
+        </ol>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             DIFERENCIAIS
+        ========================== -->
+
+        <section class="differentials section"
+            id="diferenciais">
+
+            <div class="container differential-container">
+
+
+                <div class="differential-text">
+
+
+                    <h2>
+
+                        Menos
+
+                        <span>
+                            achismo.
+                        </span>
+
+                        <br>
+
+                        Mais aquisição.
+
+                    </h2>
+
+
+                    <p>
+
+                        Não queremos apenas gerar volume.
+                        A prioridade é construir um processo que
+                        faça sentido para o seu negócio e possa ser
+                        medido, melhorado e repetido.
+
+                    </p>
+
+
+                    <a href="#contato"
+                        class="text-link">
+
+                        Falar com um de nossos agentes
+                        <span>
+                            →
+                        </span>
+
                     </a>
 
-                   <a
-                        href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Quero%20criar%20um%20site%20para%20minha%20empresa."
-                        class="button button-primary"
+                </div>
+
+
+
+                <div class="differential-grid">
+
+
+                    <article class="differential-card">
+
+                        <span>
+                            ◈
+                        </span>
+
+                        <h3>
+                            Orientada a dados
+                        </h3>
+
+                        <p>
+
+                            Decisões baseadas em resultados,
+                            indicadores e sinais reais.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="differential-card">
+
+                        <span>
+                            ✦
+                        </span>
+
+                        <h3>
+                            Estratégia sob medida
+                        </h3>
+
+                        <p>
+
+                            Cada operação parte do mercado
+                            e do objetivo comercial da empresa.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="differential-card">
+
+                        <span>
+                            ⌘
+                        </span>
+
+                        <h3>
+                            Tecnologia aplicada
+                        </h3>
+
+                        <p>
+
+                            Usamos tecnologia e automação
+                            quando elas realmente simplificam a aquisição.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="differential-card">
+
+                        <span>
+                            ↗
+                        </span>
+
+                        <h3>
+                            Foco em oportunidades
+                        </h3>
+
+                        <p>
+
+                            O objetivo é abrir novas conversas
+                            comerciais e gerar oportunidades.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta section"
+            id="contato">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+
+                    <h2>
+
+                        Pronto para colocar sua aquisição em movimento?
+
+                    </h2>
+
+
+                    <p>
+
+                        Conte sobre sua empresa e descubra como
+                        podemos estruturar uma estratégia de aquisição.
+
+                    </p>
+
+
+                    <!-- TROQUE O NÚMERO ABAIXO -->
+
+                    <a href="https://wa.me/5537998657433"
                         target="_blank"
                         rel="noopener noreferrer"
-                    >
-                        FALAR COM UM DOS NOSSOS AGENTES
-                        <span aria-hidden="true">→</span>
+                        class="button button-primary">
+
+                        Conversar com um dos nossos agentes
+
                     </a>
+
+
+                    <small>
+                        Atendimento comercial pelo WhatsApp
+                    </small>
 
                 </div>
 
@@ -1399,148 +904,58 @@
 
 
 
-    <!-- =====================================================
+    <!-- =========================
          FOOTER
-         ===================================================== -->
+    ========================== -->
 
-    <footer class="site-footer">
+    <footer class="footer">
 
         <div class="container footer-container">
 
 
-            <!-- Identidade -->
+            <div>
 
-            <div class="footer-brand">
+                <div class="footer-logo">
 
-                <a
-                    href="#inicio"
-                    class="footer-logo"
-                >
-                    Orbita
-                </a>
+                    ORBIT<span>A</span>
+
+                </div>
 
                 <p>
-                    Sites que colocam sua empresa em órbita.
+                    Aquisição de potenciais clientes.
                 </p>
 
             </div>
 
 
-            <!-- Empresa -->
+            <nav class="footer-links">
 
-            <div class="footer-column">
+                <a href="#solucao">
+                    Solução
+                </a>
 
-                <h2>
-                    Empresa
-                </h2>
+                <a href="#processo">
+                    Processo
+                </a>
 
-                <ul>
+                <a href="#diferenciais">
+                    Diferenciais
+                </a>
 
-                    <li>
-                        <a href="#sobre">
-                            Sobre
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#processo">
-                            Processo
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#projetos">
-                            Projetos
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Soluções -->
-
-            <div class="footer-column">
-
-                <h2>
-                    Soluções
-                </h2>
-
-                <ul>
-
-                    <li>
-                        <a href="#servicos">
-                            Sites
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#servicos">
-                            Landing Pages
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#servicos">
-                            Manutenção
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Contato -->
-
-            <div class="footer-column">
-
-                <h2>
+                <a href="#contato">
                     Contato
-                </h2>
+                </a>
 
-                <ul>
-
-                    <li>
-                        <a
-                            href="https://wa.me/5537998657433?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20sites%20da%20%C3%93rbita."
-"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            WhatsApp
-                            <span aria-hidden="true">→</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a
-                            href="https://www.instagram.com/orbitacoding?igsi=MTdjdWFwMWU2aGZnOA=="
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Instagram
-                            <span aria-hidden="true">→</span>
-                        </a>
-                </ul>
-
-            </div>
-
-        </div>
+            </nav>
 
 
-        <!-- Copyright -->
+            <p class="copyright">
 
-        <div class="container footer-bottom">
+                © <span id="year"></span>
+                Orbita. Todos os direitos reservados.
 
-            <p>
-                © 2026 Orbita. Todos os direitos reservados.
             </p>
 
-            <p>
-                <strong>Desenvolvido por Lucas Miguel | Orbita</strong>
-            </p>
 
         </div>
 
@@ -1548,15 +963,9 @@
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT EXTERNO
-         ===================================================== -->
+    <!-- JAVASCRIPT -->
 
-    <script
-        src="script.js"
-        defer
-    ></script>
-
+    <script src="script.js"></script>
 
 </body>
 
