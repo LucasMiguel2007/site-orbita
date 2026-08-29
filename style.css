@@ -2290,36 +2290,489 @@ h2 strong {
     }
 }
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* =====================================================
+   COMPATIBILIDADE — INSTAGRAM / WEBVIEW MOBILE
+===================================================== */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-
-    transition:
-        opacity .7s ease,
-        transform .7s cubic-bezier(.2,.8,.2,1);
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
-.problem-card:nth-child(2),
-.service:nth-child(2),
-.differential-card:nth-child(2) {
-    transition-delay: .08s;
+/* Evita elementos maiores que a tela */
+.container {
+    width: calc(100% - 32px);
+    max-width: var(--container);
 }
 
-.problem-card:nth-child(3),
-.service:nth-child(3),
-.differential-card:nth-child(3) {
-    transition-delay: .16s;
+/* ===============================
+   HEADER MOBILE
+================================ */
+
+@media screen and (max-width: 720px) {
+
+    .header {
+        position: absolute;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        width: calc(100% - 24px);
+    }
+
+    .logo {
+        gap: 7px;
+        font-size: 16px;
+        letter-spacing: .12em;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+    }
+
+    .menu-button span {
+        width: 23px;
+        height: 2px;
+        margin: 3px 0;
+    }
+
+    /* MENU ABERTO */
+
+    .nav {
+        position: fixed;
+        top: 68px;
+        left: 12px;
+        right: 12px;
+
+        width: auto;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 12px;
+
+        border-radius: 18px;
+
+        background: rgba(2, 11, 29, .98);
+
+        border: 1px solid rgba(255,255,255,.12);
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.45);
+
+        z-index: 9999;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 14px;
+
+        font-size: 14px;
+    }
+
+    .nav-button {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+
+    /* ===============================
+       HERO
+    ================================ */
+
+    .hero {
+        min-height: auto;
+        padding-top: 115px;
+        padding-bottom: 55px;
+    }
+
+    .hero-container {
+        width: calc(100% - 28px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 11vw, 54px);
+        line-height: 1.02;
+        letter-spacing: -.045em;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 500px;
+        margin: 22px auto 0;
+
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        margin-top: 28px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        width: 100%;
+        min-height: 54px;
+    }
+
+
+    /* ===============================
+       HERO VISUAL
+    ================================ */
+
+    .hero-visual {
+        width: 100%;
+        min-height: 360px;
+
+        margin-top: 5px;
+
+        transform: none;
+    }
+
+    .orbit {
+        width: 330px;
+        height: 330px;
+    }
+
+    .orbit-circle {
+        width: 235px;
+        height: 235px;
+    }
+
+    .orbit-ring {
+        width: 285px;
+        height: 115px;
+    }
+
+    .orbit-center {
+        width: 78px;
+        height: 78px;
+        font-size: 34px;
+    }
+
+    .dot-one {
+        top: 38px;
+        right: 65px;
+    }
+
+    .dot-two {
+        bottom: 58px;
+        left: 48px;
+    }
+
+    .orbit-arrow {
+        top: 28px;
+        right: 25px;
+        font-size: 48px;
+    }
+
+
+    /* ===============================
+       CARDS
+    ================================ */
+
+    .info-card {
+        padding: 13px 15px;
+        border-radius: 13px;
+    }
+
+    .card-one {
+        top: 5px;
+        left: 0;
+    }
+
+    .card-two {
+        right: 0;
+        bottom: 0;
+    }
+
+    .info-card strong {
+        font-size: 16px;
+    }
+
+    .card-two strong {
+        font-size: 12px;
+    }
+
+
+    /* ===============================
+       SEÇÕES
+    ================================ */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header h2,
+    .section-intro h2,
+    .differential-text h2 {
+        font-size: clamp(35px, 10vw, 46px);
+        line-height: 1.04;
+    }
+
+    .section-header > p {
+        margin-top: 22px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* ===============================
+       CARDS
+    ================================ */
+
+    .problem-grid,
+    .services,
+    .differential-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 40px;
+    }
+
+    .problem-card,
+    .service,
+    .differential-card {
+        width: 100%;
+        min-height: auto;
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    .problem-card h3 {
+        margin-top: 38px;
+        font-size: 21px;
+    }
+
+    .service h3 {
+        font-size: 22px;
+    }
+
+
+    /* ===============================
+       PROCESSO
+    ================================ */
+
+    .process-list {
+        margin-top: 40px;
+    }
+
+    .process-item {
+        display: grid;
+
+        grid-template-columns: 45px 1fr;
+
+        gap: 12px;
+
+        padding: 22px 0;
+    }
+
+    .process-item > strong {
+        display: none;
+    }
+
+    .process-item h3 {
+        font-size: 19px;
+        line-height: 1.2;
+    }
+
+    .process-item p {
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    /* ===============================
+       DIFERENCIAIS
+    ================================ */
+
+    .differential-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+
+    /* ===============================
+       CTA
+    ================================ */
+
+    .cta {
+        padding: 65px 0;
+    }
+
+    .cta-box {
+        width: 100%;
+        padding: 50px 20px;
+        border-radius: 20px;
+    }
+
+    .cta-box h2 {
+        font-size: clamp(34px, 9vw, 44px);
+    }
+
+    .cta-box p {
+        font-size: 14px;
+    }
+
+
+    /* ===============================
+       FOOTER
+    ================================ */
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .footer-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
 }
 
-.differential-card:nth-child(4) {
-    transition-delay: .24s;
+
+/* =====================================================
+   CELULARES MUITO PEQUENOS
+===================================================== */
+
+@media screen and (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    .hero-visual {
+        min-height: 315px;
+    }
+
+    .orbit {
+        width: 285px;
+        height: 285px;
+    }
+
+    .orbit-circle {
+        width: 205px;
+        height: 205px;
+    }
+
+    .orbit-ring {
+        width: 245px;
+        height: 100px;
+    }
+
+    .orbit-center {
+        width: 68px;
+        height: 68px;
+    }
+
+    .info-card {
+        transform: scale(.9);
+    }
+}
+
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media screen and (min-width: 721px) and (max-width: 1100px) {
+
+    .container {
+        width: calc(100% - 50px);
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 450px;
+        margin-top: 20px;
+    }
+
+    .problem-grid,
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .differential-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
